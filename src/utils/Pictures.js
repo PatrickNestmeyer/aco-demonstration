@@ -1,41 +1,33 @@
-import Alanya from "../assets/alanya.jpg";
-import Coconut from "../assets/coconut.jpg";
-import FishAndChips from "../assets/fisch_and_chips.jpg";
-import ForbiddenCity from "../assets/forbidden_city.jpg";
-import GreenSmoothie from "../assets/green_smoothie.jpg";
-import KohTao from "../assets/koh_tao.jpg";
-
 export default class Pictures {
     static getPictureData() {
-        return ([
-            {
+        return ([{
                 id: "picture-1",
-                image: Alanya,
+                image: '/images/alanya.JPG',
                 descr: "Alanya"
             },
             {
                 id: "picture-2",
-                image: Coconut,
+                image: '/images/alanya.JPG',
                 descr: "Coconut"
             },
             {
                 id: "picture-3",
-                image: FishAndChips,
+                image: '/images/fisch_and_chips.jpg',
                 descr: "Fish and Chips"
             },
             {
                 id: "picture-4",
-                image: ForbiddenCity,
+                image: '/images/forbidden_city.jpg',
                 descr: "Forbidden City"
             },
             {
                 id: "picture-5",
-                image: GreenSmoothie,
+                image: '/images/green_smoothie.jpg',
                 descr: "Green Smoothie"
             },
             {
                 id: "picture-6",
-                image: KohTao,
+                image: '/images/koh_tao.jpg',
                 descr: "Koh Tao"
             }
         ]);
