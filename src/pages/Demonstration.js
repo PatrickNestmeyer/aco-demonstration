@@ -8,7 +8,13 @@ const { Meta } = Card;
 export default class Demonstration extends React.Component {
 
     state = {
+        subtitle: 'ACO systems',
         selectedImageIds: []
+    };
+
+    constructor(props) {
+        super(props);
+        this.props.subtitle(this.state.subtitle);
     }
 
     handleClick(data) {

@@ -24,23 +24,34 @@ const { Header, Footer, Content, Sider } = Layout;
 export default class App extends React.Component {
 
   state = {
-    collapses: false,
-    title: "Ant Colony Optimization",
-    subtitle: "An explanation to the Algorithm"
+    title: 'Ant Colony Optimization',
+    subtitle: '',
+    screenOrientation: window.screen.orientation
   };
 
-  toggle = () => {
+  componentDidMount = () => {
+    window.addEventListener('orientationchange', () => {
+      this.setState({screenOrientation: window.screen.orientation});
+      console.log(this.state.screenOrientation);
+    });
+    window.addEventListener('resize', () => {
+      this.setState({screenOrientation: window.screen.orientation});
+      console.log(this.state.screenOrientation);
+    })
+  }
+
+  changeSubtitle = (subtitle) => {
     this.setState({
-      collapsed: !this.state.collapsed,
+      subtitle: subtitle
     });
   };
 
-  render() {
+  render = () => {
     return (
         <Router>
           <div>
           <Layout style={{minHeight:"100vh"}}>
-            <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+            <Sider trigger={null} collapsible collapsed={(window.screen.orientation.type === 'portrait-primary')}>
               <div
                   className="logo" />
               <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
@@ -79,8 +90,6 @@ export default class App extends React.Component {
             <Layout>
               <Header style={{ background: '#fff', padding: 0 }}>
                 <PageHeader
-                    backIcon=<Icon type={this.state.collapsed ? 'right' : 'left'} />
-                    onBack={this.toggle}
                     title={this.state.title}
                     subTitle={this.state.subtitle}
                 />
@@ -95,19 +104,19 @@ export default class App extends React.Component {
               >
                 <Switch>
                   <Route path="/home">
-                    <Home/>
+                    <Home subtitle={this.changeSubtitle.bind(this)}/>
                   </Route>
                   <Route path="/biolocical-background">
-                    <BiologicalBackground />
+                    <BiologicalBackground subtitle={this.changeSubtitle.bind(this)}/>
                   </Route>
                   <Route path="/artificial-ants">
-                    <ArtificialAnts />
+                    <ArtificialAnts subtitle={this.changeSubtitle.bind(this)}/>
                   </Route>
                   <Route path="/aco-systems">
-                    <AcoSystems />
+                    <AcoSystems subtitle={this.changeSubtitle.bind(this)}/>
                   </Route>
                   <Route path="/demonstration">
-                    <Demonstration />
+                    <Demonstration subtitle={this.changeSubtitle.bind(this)}/>
                   </Route>
                 </Switch>
               </Content>
@@ -119,5 +128,5 @@ export default class App extends React.Component {
         </div>
         </Router>
     );
-  }
+  };
 }
