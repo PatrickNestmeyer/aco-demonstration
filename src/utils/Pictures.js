@@ -7,7 +7,7 @@ export default class Pictures {
             },
             {
                 id: "picture-2",
-                image: '/images/alanya.JPG',
+                image: '/images/coconut.JPG',
                 descr: "Coconut"
             },
             {
