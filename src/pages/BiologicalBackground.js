@@ -33,15 +33,15 @@ export default class BiologicalBackground extends React.Component {
                         <li>Pheromones are heavily concentrated on short paths</li>
                     </ul>
                 </TabPane>
-                <TabPane tab="Bridge experiment - I" key="2">
-                    <h2>Bridge experiment</h2>
+                <TabPane tab="Bridge experiment" key="2">
+                    <h2>Bridge experiment - I</h2>
                     <ul>
                         <li>Two paths of <b>equal</b> length between anthill and feeding station</li>
                         <li>Ants choose a path randomly in the beginning</li>
                         <li>Decision for a specific path more and more often, due to its stronger concentrated pheromones over time</li>
                         <li>After a while only one path is used</li>
                     </ul>
-                    <h2>Bridge experiment</h2>
+                    <h2>Bridge experiment - II</h2>
                     <ul>
                         <li>Two paths of <b>different</b> length between anthill and feeding station</li>
                         <li>Shortest path is chosen quickly</li>
@@ -56,7 +56,7 @@ export default class BiologicalBackground extends React.Component {
                     <br/>
                     <MathJax.Provider>
                         <div>
-                            <MathJax.Node formula={formulas.probability} />
+                            <MathJax.Node formula={formulas.pheromoneConcentrationAS} />
                         </div>
                     </MathJax.Provider>
                     <br/>

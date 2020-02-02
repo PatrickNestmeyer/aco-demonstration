@@ -69,22 +69,7 @@ export default class AcoSystems extends React.Component {
                         <li>D = heuristic Information</li>
                         <li>k = other possible nodes</li>
                     </ul>
-                </TabPane>
-                <TabPane tab="MaxMin-Ant-System" key="3">
-                    <h2>MaxMin-Ant-System (MMAS)</h2>
-                    <ol>
-                        <li>Run arbitrary number of iterations</li>
-                        <li>Let each ant find its way through graph</li>
-                        <li>Update of the pheromone values</li>
-                    </ol>
-                </TabPane>
-                <TabPane tab="Ant-Colony-System (ACS)" key="4">
-                    <h2>MaxMin-Ant-System (MMAS)</h2>
-                    <ol>
-                        <li>Run arbitrary number of iterations</li>
-                        <li>Let each ant find its way through graph</li>
-                        <li>Update of the pheromone values</li>
-                    </ol>
+                    <p>Finally update of pheromones after each ant and each iteration.</p>
                 </TabPane>
             </Tabs>
         );

@@ -46,14 +46,6 @@ export default class Demonstration extends React.Component {
         demoCanvas.setAttribute("id", "canvas-"+id);
         selectedDomImage.parentNode.replaceChild(demoCanvas, selectedDomImage);
 
-        //Display inverted Image
-        /*const invertedImageDataRgba = this.invertImgData(imgData);
-        console.log("Inverted imgData: ", imgData);
-        const invertedImageData = new ImageData(new Uint8ClampedArray(invertedImageDataRgba), originalWidth, originalHeight);
-        demoCtx.putImageData(invertedImageData, 0, 0);
-        console.log("Drawn Image: ", originalWidth, originalHeight, invertedImageData);
-        */
-
         let aco = new AcoCore(imgData, ghostCanvas.width, ghostCanvas.height, demoCtx);
         aco.run();
     }
@@ -77,13 +69,21 @@ export default class Demonstration extends React.Component {
             cardList.push(card);
         });
         return(
-            <div
-                style={{
+            <div>
+                <h2>Demonstration,</h2>
+                <br/>
+                <p>Here we want to use the algorithm to detect edges on images.</p>
+                <p>Below is a set of images to run the algorithm on.</p>
+                <p>Please beware that the algorithm will take some seconds and the result will only be shown when computations is done finally.</p>
+                <p>You can reset the result to the original picture by clicking on it again.</p>
+                <p>Be careful, if you click twice on an image too quickly, you wont see any result, because the result is replaced by the original picture immediately.</p>
+                <div style={{
                     display: "flex",
                     flexWrap: "wrap",
                     marginTop: "25px"
                 }}>
-                {cardList}
+                    {cardList}
+                </div>
             </div>
         );
     }
