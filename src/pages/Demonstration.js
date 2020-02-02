@@ -74,7 +74,7 @@ export default class Demonstration extends React.Component {
                 <br/>
                 <p>Here we want to use the algorithm to detect edges on images.</p>
                 <p>Below is a set of images to run the algorithm on.</p>
-                <p>Please beware that the algorithm will take some seconds and the result will only be shown when computations is done finally.</p>
+                <p>Please beware that the algorithm will take some seconds and the result will only be shown when computation is done finally.</p>
                 <p>You can reset the result to the original picture by clicking on it again.</p>
                 <p>Be careful, if you click twice on an image too quickly, you wont see any result, because the result is replaced by the original picture immediately.</p>
                 <div style={{
